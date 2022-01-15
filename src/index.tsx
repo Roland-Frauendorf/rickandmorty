@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Providers from './providers';
+import Page from './page/page';
 import './index.css';
-import App from './App';
 
 ReactDOM.render(
     <React.StrictMode>
-        <App />
+        <Providers>
+            <Page />
+        </Providers>
     </React.StrictMode>,
     document.getElementById('root'),
 );
