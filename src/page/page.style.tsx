@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { PageColorProps } from './page.types';
+import { FontMainColorProp, MainColorProp, SecondaryColorProp } from './page.types';
 
-const Window = styled.div<PageColorProps>`
+const Window = styled.div<MainColorProp & FontMainColorProp>`
     height: 100vh;
     padding: 16px;
     background-color: ${(props) => props.mainColor};
@@ -9,4 +9,23 @@ const Window = styled.div<PageColorProps>`
     font-family: 'Gotham', sans-serif;
 `;
 
-export default { Window };
+const Container = styled.div<SecondaryColorProp>`
+    padding: 16px;
+    height: 100%;
+    background-color: ${(props) => props.secondaryColor};
+    border-radius: 8px;
+`;
+
+const Header = styled.h1<FontMainColorProp>`
+    color: ${(props) => props.fontMainColor};
+    text-align: center;
+    font-weight: bold;
+`;
+
+const Content = styled.main``;
+
+const Footer = styled.footer`
+    text-align: center;
+`;
+
+export default { Window, Container, Header, Content, Footer };
