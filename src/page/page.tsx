@@ -1,6 +1,6 @@
 import React from 'react';
 import Style from './page.style';
-import { useColorProps } from '../context/props/context.props.colors';
+import { useColorProps } from '../context';
 
 function Page() {
     const { mainColor, fontMainColor, secondaryColor } = useColorProps();
