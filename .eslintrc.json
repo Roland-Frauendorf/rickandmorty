@@ -5,7 +5,8 @@
     },
     "extends": [
         "plugin:react/recommended",
-        "airbnb"
+        "airbnb",
+        "plugin:react-hooks/recommended"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -20,5 +21,14 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "react/jsx-filename-extension": "off",
+        "import/extensions": ["error", "ignorePackages", {
+            "ts": "never",
+            "tsx": "never"
+        }],
+        "react/jsx-no-constructed-context-values": "off"
+    },
+    "settings": {
+        "import/resolver": { "typescript": {} }
     }
 }
