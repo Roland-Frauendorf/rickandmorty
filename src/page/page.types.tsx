@@ -2,11 +2,15 @@ export type MainColorProp = { mainColor: string };
 
 export type SecondaryColorProp = { secondaryColor: string };
 
-export type FontMainColorProp = { fontMainColor: string };
-
 export type ContrastColorProp = { contrastColor: string };
 
-export type PageColorsProps = MainColorProp &
+export type BorderRadiusProp = { borderRadius: string };
+
+export type PageColorsProps = MainColorProp & SecondaryColorProp & ContrastColorProp;
+
+export type PageContainerProps = MainColorProp &
+    ContrastColorProp &
     SecondaryColorProp &
-    FontMainColorProp &
-    ContrastColorProp;
+    BorderRadiusProp & {
+        loadError: boolean;
+    };
