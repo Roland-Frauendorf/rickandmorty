@@ -21,6 +21,10 @@ const Container = styled.div<ContrastColorProp>`
     .ant-pagination-item-ellipsis {
         color: ${(props) => props.contrastColor} !important;
     }
+
+    @media only screen and (max-device-width: 768px) {
+        margin: auto 2% 16px 2%;
+    }
 `;
 
 const Content = styled.div`
