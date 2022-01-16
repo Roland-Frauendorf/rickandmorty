@@ -1,11 +1,22 @@
-## Available Scripts
+## Apresentação
 
-In the project directory, you can run:
+Este é um projeto simples de integração com GraphQL, através da biblioteca
+Apollo Client, para renderizar cardsdos personagens da série Rick and Morty,
+com fins de estudo e utilização em portfólio.
 
-### `yarn start`
+Para gerenciamento de estado da aplicação, estão sendo utilizados os React
+Hooks.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Rodando a aplicação
+Para rodar a aplicação basta utilizar 2 comandos:
+`yarn install` e `yarn start`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Sugestão para implementações futuras
+- Adicionar seleção de quantidade de card por página.
+- Adicionar filtro para procurar por um personagem.
+- Adicionar tema "light".
+- Adicionar mais informações nos cards.
+- Verificar o funcionamento de cache do Apollo Client
+
+## Autoria
+Desenvolvido por Roland Frauendorf.
