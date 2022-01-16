@@ -5,10 +5,8 @@ import Page from './page/page';
 import './index.css';
 
 ReactDOM.render(
-    <React.StrictMode>
-        <Providers>
-            <Page />
-        </Providers>
-    </React.StrictMode>,
+    <Providers>
+        <Page />
+    </Providers>,
     document.getElementById('root'),
 );
