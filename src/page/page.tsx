@@ -1,6 +1,7 @@
 import React from 'react';
 import Style from './page.style';
 import { useColorProps } from '../context';
+import Paginator from './components/paginator/paginator';
 
 function Page() {
     const { mainColor, fontMainColor, secondaryColor } = useColorProps();
@@ -11,9 +12,11 @@ function Page() {
                 <Style.Header fontMainColor={fontMainColor}>
                     Rick and Morty - Characters
                 </Style.Header>
-                <Style.Content />
-                <Style.Footer>by Roland Frauendorf</Style.Footer>
+                <Style.Content>
+                    <Paginator />
+                </Style.Content>
             </Style.Container>
+            <Style.Footer>by Roland Frauendorf</Style.Footer>
         </Style.Window>
     );
 }
