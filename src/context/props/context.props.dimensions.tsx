@@ -27,4 +27,9 @@ export default function DimensionsPropsProvider({ children }: { children: ReactN
     );
 }
 
+/**
+ * Propriedades de dimensionamento da página.
+ * @property borderRadius: dimensão das bordas dos componentes da página.
+ * @property setBorderRadius: altera a dimensão das bordas dos componentes da página.
+ */
 export const useDimensionsProps = () => useContext(DimensionsPropsContext);

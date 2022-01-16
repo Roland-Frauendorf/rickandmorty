@@ -7,6 +7,9 @@ import { quantitiesInfoQuery } from '../../../GraphQL/queries';
 import { QuantitiesQueryResult } from '../../../GraphQL/queries.types';
 import { useColorProps, useErrorState, usePageNumber, usePaginationLoad } from '../../../context';
 
+/**
+ * Com os dados prontos, cria-se o componente de paginação.
+ */
 const pagination: React.FC<PaginationProps> = ({ data, setPageNumber }) => {
     if (!data) return null;
 
@@ -25,6 +28,10 @@ const pagination: React.FC<PaginationProps> = ({ data, setPageNumber }) => {
     );
 };
 
+/**
+ * Componente para paginação da página de acordo
+ * com os dados de personagens que serão carregados.
+ */
 function Paginator() {
     const { contrastColor } = useColorProps();
     const { data, loading, error }: QuantitiesQueryResult = useQuery(quantitiesInfoQuery);
@@ -33,10 +40,12 @@ function Paginator() {
     const { setLoadError } = useErrorState();
 
     useEffect(() => {
+        // Altera a flag de carregamento da paginação de acordo com o respectivo objeto no resultado da query.
         setPaginationLoading(loading);
     }, [loading, setPaginationLoading]);
 
     useEffect(() => {
+        // Altera a flag de erro de carregamento caso ocorra um erro no carregamento dos dados da paginação.
         if (error) setLoadError(true);
     }, [error, setLoadError]);
 

@@ -25,4 +25,8 @@ export default function PaginationLoadProvider({ children }: { children: ReactNo
     );
 }
 
+/**
+ * @property paginationLoading: indica se o componente de paginação está sendo carregado.
+ * @property setPaginationLoading: altera a flag de carregamento para true ou false.
+ */
 export const usePaginationLoad = () => useContext(PaginationLoadContext);

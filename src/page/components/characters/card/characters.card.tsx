@@ -4,8 +4,8 @@ import Style from './characters.card.style';
 import CharacterModal from '../modal/characters.modal';
 import { CharacterInfo } from '../../../../GraphQL/queries.types';
 
-const CLOSE = false;
-const OPEN = true;
+const CLOSE = false; // Constante indicando que o modal deve ser FECHADO
+const OPEN = true; // Constante indicando que o modal deve ser ABERTO
 
 function CharacterCard({ character }: { character: CharacterInfo }) {
     const { mainColor, contrastColor } = useColorProps();

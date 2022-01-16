@@ -13,6 +13,7 @@ const pageContainer: React.FC<PageContainerProps> = ({
     borderRadius,
     loadError,
 }) => {
+    // renderiza o conteúdo da página se não exister um erro de carregamento na mesma.
     if (!loadError)
         return (
             <Style.Container secondaryColor={secondaryColor} borderRadius={borderRadius}>
@@ -26,6 +27,7 @@ const pageContainer: React.FC<PageContainerProps> = ({
             </Style.Container>
         );
 
+    // Se ocorrer um erro de carregamento, um modal de erro será aberto para indicar o mesmo.
     return (
         <div>
             {Modal.error({

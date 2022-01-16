@@ -27,4 +27,8 @@ export default function CharactersProvider({ children }: { children: ReactNode }
     );
 }
 
+/**
+ * @property characters: dados dos persoangens carregados através da query no GraphQL.
+ * @property setCharacters: salva os dados dos personagens que foram carregados.
+ */
 export const useCharacters = () => useContext(CharactersContext);

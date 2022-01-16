@@ -22,31 +22,40 @@ function Characters() {
         variables: { page: 0 },
     });
 
+    /**
+     * Busca os dados dos personagens de acordo com a página selecionada.
+     */
     const loadCharacters = useCallback(async () => {
-        setCharactersLoading(true);
+        setCharactersLoading(true); // Altera a flag de carregamento para true, de modo com que a página antiga deixe de ser renderizada.
         const { data, error }: QueryCharactersResult = await fetchMore({
             variables: { page: pageNumber },
         }).catch(() => ({ error: true }));
 
         if (error) {
-            setLoadError(true);
+            setLoadError(true); // Em caso de erro, altera-se a flag de erro de carregamento para true.
             return;
         }
 
         if (data) setCharacters(data?.characters);
     }, [setCharactersLoading, fetchMore, pageNumber, setCharacters, setLoadError]);
 
+    /**
+     * Quando uma página é alterada com o paginator, carrega os personagens da nova página.
+     */
     useEffect(() => {
         loadCharacters();
     }, [pageNumber, loadCharacters]);
 
+    /**
+     * Quando os personagens terminarem de ser carregados, altera-se a flag de carregamento para false.
+     */
     useEffect(() => {
         if (characters) setCharactersLoading(false);
     }, [characters, setCharactersLoading]);
 
     return (
         <Style.Container>
-            {!charactersLoading && !paginationLoading && !loadError ? (
+            {!charactersLoading && !paginationLoading && !loadError ? ( // Se os dados estiverem prontos, carrega-se a nova página.
                 <Style.Composer>
                     {(characters as CharactersData).results.map((character) => (
                         <CharacterCard key={character.id} character={character} />

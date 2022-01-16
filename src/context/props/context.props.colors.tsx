@@ -43,4 +43,13 @@ export default function ColorPropsProvider({ children }: { children: ReactNode }
     );
 }
 
+/**
+ * Propriedades de cor da página.
+ * @property mainColor: cor principal no design da página.
+ * @property secondaryColor: cor secundária no design da página.
+ * @property contrastColor: cor de contraste no design da página.
+ * @property setMainColor: altera a cor principal do design da página (útil para alteração de temas).
+ * @property setSecondaryColor: altera a cor secundária do design da página (útil para alteração de temas).
+ * @property setContrastColor: altera a cor de contraste do design da página (útil para alteração de temas).
+ */
 export const useColorProps = () => useContext(ColorPropsContext);

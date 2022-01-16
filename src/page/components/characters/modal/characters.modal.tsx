@@ -3,7 +3,7 @@ import { useColorProps, useDimensionsProps } from '../../../../context';
 import { ModalProps } from './characters.modal.type';
 import Style from './characters.modal.style';
 
-const CLOSE = false;
+const CLOSE = false; // Constante indicando que o modal deve ser FECHADO
 
 function CharacterModal({ character, openModal, setOpenCloseModal }: ModalProps) {
     const { mainColor, contrastColor } = useColorProps();

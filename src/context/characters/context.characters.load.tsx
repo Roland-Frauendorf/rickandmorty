@@ -25,4 +25,8 @@ export default function CharactersLoadingProvider({ children }: { children: Reac
     );
 }
 
+/**
+ * @property charactersLoading: indica se o conteúdo da página (persoangens) está sendo carregado.
+ * @property setCharactersLoading: altera a flag de carregamento para true ou false.
+ */
 export const useCharactersLoad = () => useContext(CharactersLoadContext);

@@ -20,4 +20,8 @@ export default function PageNumberProvider({ children }: { children: ReactNode }
     );
 }
 
+/**
+ * @property pageNumber: nuḿero da página que está sendo visualizada.
+ * @property setPageNumber: altera o número da página que está sendo visualizada.
+ */
 export const usePageNumber = () => useContext(PageNumberContext);
