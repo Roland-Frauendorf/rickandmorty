@@ -15,11 +15,13 @@ export const charactersInfoQuery = gql`
     query Characters($page: Int) {
         characters(page: $page) {
             results {
+                id
                 name
                 image
                 status
                 episode {
                     name
+                    id
                 }
             }
         }
