@@ -5,6 +5,9 @@ import {
     ErrorProvider,
     PageNumberProvider,
     PaginationLoadProvider,
+    CharactersProvider,
+    CharactersLoadingProvider,
+    DimensionsPropsProvider,
 } from './context';
 import apolloClient from './GraphQL/client';
 
@@ -13,9 +16,15 @@ const providers: React.FC = ({ children }: { children?: ReactNode }) => {
         <ApolloProvider client={apolloClient}>
             <ErrorProvider>
                 <ColorPropsProvider>
-                    <PaginationLoadProvider>
-                        <PageNumberProvider>{children}</PageNumberProvider>
-                    </PaginationLoadProvider>
+                    <DimensionsPropsProvider>
+                        <PaginationLoadProvider>
+                            <PageNumberProvider>
+                                <CharactersLoadingProvider>
+                                    <CharactersProvider>{children}</CharactersProvider>
+                                </CharactersLoadingProvider>
+                            </PageNumberProvider>
+                        </PaginationLoadProvider>
+                    </DimensionsPropsProvider>
                 </ColorPropsProvider>
             </ErrorProvider>
         </ApolloProvider>
