@@ -2,17 +2,12 @@ import React, { useEffect } from 'react';
 import { Pagination as AntdPagination } from 'antd';
 import { useQuery } from '@apollo/client';
 import PaginatorLayout from './paginator.style';
+import { PaginationProps } from './paginator.types';
 import { quantitiesInfoQuery } from '../../../GraphQL/queries';
-import { useColorProps, useErrorState, usePageNumber } from '../../../context';
-import { usePaginationLoad } from '../../../context/pagination/context.pagination.load';
-import { QueryQuantitiesData } from '../../../GraphQL/queries.types';
+import { QuantitiesQueryResult } from '../../../GraphQL/queries.types';
+import { useColorProps, useErrorState, usePageNumber, usePaginationLoad } from '../../../context';
 
-type Props = {
-    data: QueryQuantitiesData | undefined;
-    setPageNumber: React.Dispatch<React.SetStateAction<number>>;
-};
-
-const pagination: React.FC<Props> = ({ data, setPageNumber }) => {
+const pagination: React.FC<PaginationProps> = ({ data, setPageNumber }) => {
     if (!data) return null;
 
     const quantityPerPage = Math.ceil(data.characters.info.count / data.characters.info.pages);
@@ -32,7 +27,7 @@ const pagination: React.FC<Props> = ({ data, setPageNumber }) => {
 
 function Paginator() {
     const { contrastColor } = useColorProps();
-    const { data, loading, error } = useQuery(quantitiesInfoQuery);
+    const { data, loading, error }: QuantitiesQueryResult = useQuery(quantitiesInfoQuery);
     const { setPageNumber } = usePageNumber();
     const { setPaginationLoading } = usePaginationLoad();
     const { setLoadError } = useErrorState();

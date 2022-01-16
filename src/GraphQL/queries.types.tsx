@@ -9,7 +9,7 @@ export type QueryQuantitiesData = {
     };
 };
 
-export type QueryQuantitiesResult = {
+export type QuantitiesQueryResult = {
     data: QueryQuantitiesData | undefined;
     loading: boolean;
     error?: ApolloError | undefined;
