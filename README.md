@@ -1,11 +1,7 @@
 ## Apresentação
 
-Este é um projeto simples de integração com GraphQL, através da biblioteca
-Apollo Client, para renderizar cardsdos personagens da série Rick and Morty,
-com fins de estudo e utilização em portfólio.
-
-Para gerenciamento de estado da aplicação, estão sendo utilizados os React
-Hooks.
+Este é um projeto simples de integração com GraphQL através da biblioteca
+Apollo Client, o qual renderiza cards dos personagens da série Rick and Morty.
 
 ## Rodando a aplicação
 Para rodar a aplicação basta utilizar 2 comandos:
